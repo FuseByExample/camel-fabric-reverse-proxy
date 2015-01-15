@@ -16,7 +16,7 @@ Note, to use the fabric8-maven-plugin, youll need this in your ~/.m2/settings.xm
     </server>
 
 
-Run:
+Move to the maven module *http-gateway-proxy* and run the maven fabric8 deploy plugin :
 
     mvn fabric8:deploy
     
@@ -31,7 +31,7 @@ can deploy it to a container.
 
 The routing is limited, although the pieces are in place to expand on it.
 
-The assumption is that each group of webservices to load balance against has one and only one
+The assumption is that each group of RESTFull services to load balance against has one and only one
 url context path (for e.g., /context/path/foo)
 
 What this does is take a request, determine how to map the path to the fabric cluster name and then
