@@ -7,12 +7,15 @@
     <bean id="recipientCreator" class="com.redhat.httpgateway.Router"/>
 
     <camelContext id="httpGatewayContext" xmlns="http://camel.apache.org/schema/blueprint" autoStartup="true">
+
+<!--  can't be used within the onException but only with errorHandler <redeliveryPolicy maximumRedeliveries="1" /> -->
+
          <onException>
-		    <redeliveryPolicy maximumRedeliveries="1" />
+            <exception>java.lang.Exception</exception>
 		    <handled>
 		      <constant>true</constant>
 		    </handled>
-		    <setHeader name="Exchange.HTTP_RESPONSE_CODE">
+		    <setHeader headerName="Exchange.HTTP_RESPONSE_CODE">
 		    	<constant>404</constant> <!-- TODO mcostello does this make sense -->
 		    </setHeader>
 		    <!-- TODO mcostell ideally this will deliver the http response back -->
