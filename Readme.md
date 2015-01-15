@@ -16,7 +16,7 @@ Note, to use the fabric8-maven-plugin, youll need this in your ~/.m2/settings.xm
     </server>
 
 
-Run:
+Move to the maven module +http-gateway-proxy+ and run the maven fabric8 deploy plugin :
 
     mvn fabric8:deploy
     
