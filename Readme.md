@@ -31,7 +31,7 @@ can deploy it to a container.
 
 The routing is limited, although the pieces are in place to expand on it.
 
-The assumption is that each group of webservices to load balance against has one and only one
+The assumption is that each group of RESTFull services to load balance against has one and only one
 url context path (for e.g., /context/path/foo)
 
 What this does is take a request, determine how to map the path to the fabric cluster name and then
