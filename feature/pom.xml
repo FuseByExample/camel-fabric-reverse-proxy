@@ -13,6 +13,12 @@
     <packaging>pom</packaging>
     <name>Http Gateway features file</name>
 
+    <properties>
+        <build.helper.maven.plugin.version>1.9.1</build.helper.maven.plugin.version>
+        <maven-resources-plugin-version>2.7</maven-resources-plugin-version>
+    </properties>
+
+
     <build>
         <resources>
             <resource>
@@ -27,6 +33,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin-version}</version>
                 <configuration>
                     <useDefaultDelimiters>false</useDefaultDelimiters>
                     <delimiters>
@@ -46,6 +53,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
+                <version>${build.helper.maven.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-artifacts</id>
